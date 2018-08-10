@@ -8,11 +8,5 @@ router.get("/", (ctx) => {
     ctx.body = { message: "hello" };
 })
 
-app
-.use(router.routes())
-.use(router.allowedMethods());
-
-app.listen(3000,() => {
-    console.log("server starts");
-})
+module.exports = router;
 
