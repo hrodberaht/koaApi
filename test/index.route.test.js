@@ -1,4 +1,5 @@
 // require the Koa server
+process.env.PORT = 3002;
 const server = require("..//src/server");
 // require supertest
 const request = require("supertest");
@@ -11,6 +12,6 @@ describe("routes: index", () => {
     const response = await request(server).get("/");
     expect(response.status).toEqual(200);
     expect(response.type).toEqual("application/json");
-    //expect(response.body.data).toEqual("Sending some JSON");
+    expect(response.body.message).toEqual("hello");
   });
 });
