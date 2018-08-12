@@ -1,16 +1,15 @@
-const Koa = require("koa");
-const Router = require("koa-router");
+module.exports = router => {
+  router.get("/", ctx => {
+    ctx.body = { message: "hello" };
+  });
 
-const app = new Koa();
-const router = new Router();
+  router.get("/api/v1", ctx => {
+    ctx.status = 200;
+    ctx.body = { message: "works" };
+  });
 
-router.get("/", ctx => {
-  ctx.body = { message: "hello" };
-});
-
-router.get("/api/v1", ctx => {
-  ctx.status = 200;
-  ctx.body = { message: "works" };
-});
-
-module.exports = router;
+  router.get("/api/v1/products", ctx => {
+    ctx.status = 200;
+    ctx.body = { message: "works" };
+  });
+};
