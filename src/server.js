@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const app = new Koa();
 const router = new Router();
 
-mongoose.connect("mongodb://localhost/test");
+mongoose.connect("mongodb://localhost/storage");
 
 const port = process.env.PORT || 3000;
 require("./routes")(router);
