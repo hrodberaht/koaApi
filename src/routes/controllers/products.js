@@ -24,6 +24,12 @@ async function findAll(ctx) {
   };
 }
 
+async function create(ctx) {
+  ctx.status = 201;
+  console.log(ctx.request.body);
+}
+
 module.exports = {
-  findAll
+  findAll,
+  create
 };

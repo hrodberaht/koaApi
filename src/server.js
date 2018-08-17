@@ -2,9 +2,12 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const mongoose = require("mongoose");
 const cors = require("@koa/cors");
+const bodyParser = require("koa-bodyparser");
 
 const app = new Koa();
 const router = new Router();
+
+app.use(bodyParser());
 app.use(cors());
 
 mongoose.connect("mongodb://localhost/storage");
